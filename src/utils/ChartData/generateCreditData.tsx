@@ -8,8 +8,10 @@ export default function generateCreditData(credit: number, bid: number, term: nu
     let remainingBalance = credit;
     const data: Array<CreditDataType> = [];
 
-    if (credit > 0 ||  bid > 0 || term > 0)
-    {
+    if (credit === 0 || bid === 0 || term === 0) {
+        setData([]);
+        return;
+    }
         for (let month = 1; month <= term; month++) {
             const interest = remainingBalance * monthlyRate;
             const principal = month < term ? annuityPayment - interest : remainingBalance + interest;
@@ -21,6 +23,5 @@ export default function generateCreditData(credit: number, bid: number, term: nu
                 debt: Math.round(remainingBalance)
             })
         }
-    }
     setData(data);
 }
