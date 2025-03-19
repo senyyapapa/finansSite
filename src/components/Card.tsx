@@ -10,9 +10,10 @@ interface CardProps {
     pokaz: boolean;
     typeTotal: string;
     calcFunc?: (credit: number, bid: number, term: number, setSum: React.Dispatch<SetStateAction<number>>, typeCapital?: number) => void;
+    getChartData: (credit: number, bid: number, term: number, typeCapital: number) => void;
 }
 
-export default function Card({label, pokaz, typeTotal, calcFunc}: CardProps) {
+export default function Card({label, pokaz, typeTotal, calcFunc, getChartData}: CardProps) {
     const [credit, setCredit] = useState(0);
     const [bid, setBid] = useState(0);
     const [term, setTerm] = useState(1);
@@ -28,6 +29,12 @@ export default function Card({label, pokaz, typeTotal, calcFunc}: CardProps) {
             }
         }
     }, [credit, bid, term, calcFunc, typeCapital, pokaz])
+
+    useEffect(() => {
+        if (getChartData) {
+            getChartData(credit, bid, term, typeCapital);
+        }
+    }, [credit, bid, term, typeCapital, getChartData]);
 
     return (
         <div className="w-2/3 h-1/2 shadow-2xl rounded-lg">
