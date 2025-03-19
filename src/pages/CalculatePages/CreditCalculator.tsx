@@ -10,8 +10,8 @@ import CreditChart from "../../components/CalculatorsCharts/CreditChart.tsx";
 export default function CreditCalculator() {
     const [data, setData] = useState<Array<CreditDataType>>([]);
 
-    const handledData = useCallback((credit: number, bid: number, term: number, typeCapital: number) => {
-        generateCreditData(credit, bid, term, typeCapital, setData);
+    const handledData = useCallback((credit: number, bid: number, term: number) => {
+        generateCreditData(credit, bid, term, setData);
 
     }, [])
 
@@ -25,7 +25,7 @@ export default function CreditCalculator() {
                 </div>
                 <div className="flex-1 flex">
                     <div className="flex h-full w-full items-center justify-center ">
-                        <div className="flex w-2/3 h-1/2 rounded shadow-2xl items-center justify-center">
+                        <div className="flex w-2/3 h-1/2 rounded-lg shadow-2xl items-center justify-center">
                             <CreditChart data={data} parseCurrency={parseCurrency} />
                         </div>
                     </div>

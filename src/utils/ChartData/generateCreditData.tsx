@@ -2,7 +2,7 @@ import CreditDataType from "../../types/ChartData/creditDataType.ts";
 import {SetStateAction} from "react";
 import * as React from "react";
 
-export default function generateCreditData(credit: number, bid: number, term: number, typeCapital: number, setData: React.Dispatch<SetStateAction<Array<CreditDataType>>>){
+export default function generateCreditData(credit: number, bid: number, term: number, setData: React.Dispatch<SetStateAction<Array<CreditDataType>>>){
     const monthlyRate = (bid/12)/100;
     const annuityPayment = credit * monthlyRate / (1 -  Math.pow(1 + monthlyRate, -term));
     let remainingBalance = credit;
