@@ -1,0 +1,102 @@
+%ol-design {
+    padding-left: 2rem;
+    font-size: medium;
+    list-style-type: decimal;
+}
+
+%half-display {
+    padding-top: 4rem;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    position: absolute;
+}
+
+.first-div{
+    @extend %half-display;
+    left: 0;
+    
+    p {
+        font-size: x-large;
+        font-weight: bold;
+    }
+    .ul {
+        list-style-type: disc;
+        font-size: large;
+        margin-left: 5%;
+    }
+    .ol-credit {
+        @extend %ol-design;
+    }
+
+    .ol-deposit {
+        @extend %ol-design;        
+    }
+
+    #ol-invest {
+        @extend %ol-design;
+    }
+    .js {
+        padding: 5rem;
+        button {
+            color: #ffffff;
+            background-color: rgb(67, 65, 227);
+            width: 8rem;
+            height: 2rem;
+            
+        }
+        button:hover{
+            background-color: rgb(95, 93, 210);
+        }
+        button:active{
+            background-color: rgb(130, 129, 227)
+        }
+    }
+    .github{
+        p{
+            font-size: medium;
+            font-weight: 500;
+            color:rgb(107, 107, 236);
+            text-decoration: underline;
+            padding-left: 5rem;
+        }
+    }
+}
+
+.second-div{
+    @extend %half-display;
+    right: 0;
+    gap: 2rem;
+    p {
+        font-size: x-large;
+        font-weight: bold;
+    }
+    dt {
+        font-size: large;
+        font-weight: 700;
+    }
+    dd{ 
+        padding-left: 1rem;
+        padding-right: 0.5rem;
+        text-align: justify;
+    }
+    .tables{
+        table{
+            width: 300px;
+        }
+        th{
+            border: 1px solid rgba($color: #000000, $alpha: 1.0);
+            text-align: center;
+            padding: 1rem;
+        }
+        td {
+            border: 1px solid rgba($color: #000000, $alpha: 1.0);
+            text-align: center;
+            line-height: 32px;
+        }
+        
+    }
+}
+

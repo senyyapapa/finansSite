@@ -1,4 +1,4 @@
 @import "tailwindcss";
 :root {
-    overflow: hidden;
+    overflow: auto; 
 }

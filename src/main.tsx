@@ -8,6 +8,7 @@ import Header from "./components/Header.tsx";
 import NotFounded from "./pages/404Page/NotFounded.tsx";
 import DepositCalculator from "./pages/CalculatePages/DepositCalculator.tsx";
 import InvestCalculator from "./pages/CalculatePages/InvestCalculator.tsx";
+import AboutPage from './pages/AboutPage/About.tsx';
 
 createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')!).render(
                 <Route path='/calculate_credit' element={<CreditCalculator />}/>
                 <Route path='/calculate_deposition' element={<DepositCalculator />}/>
                 <Route path='/calculate_investments' element={<InvestCalculator />}/>
+                <Route path='/about' element={<AboutPage />} />
                 <Route path='*' element={<NotFounded />}/>
             </Routes>
         </StrictMode>

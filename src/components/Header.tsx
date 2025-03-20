@@ -16,6 +16,7 @@ export default function Header() {
                             <NavLink to='/calculate_investments' className='block p-2 bg-gray-100'>Калькулятор инвестиций</NavLink>
                         </div>
                     </div>
+                    <NavLink to='/about' className={location.pathname == '/about' ? 'font-semibold border-b-2 text-lg border-black' : ''}>О сайте</NavLink>
                 </div>
             </div>
         </>
