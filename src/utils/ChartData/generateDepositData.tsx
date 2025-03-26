@@ -8,7 +8,7 @@ export default function generateDepositData(credit: number, bid: number, term: n
         return;
     }
 
-    const monthlyRate = (bid / 100);
+    const monthlyRate = (bid / 12 / 100);
     const data = [];
     let currentBalance = credit;
     let previousBalance = credit;
