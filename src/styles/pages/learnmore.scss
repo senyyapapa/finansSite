@@ -1,0 +1,42 @@
+%font-family{
+  font-family: JetBrainsMono Nerd Font;
+}
+
+@mixin formulas($width) {
+  font-size: 0.75rem;
+  opacity: 60%;
+  font-family: "Courier New";
+  height: 2rem;
+  width: $width;
+  background-color: #c7c7c7;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+.briefly-about{
+  display: grid;
+  @extend %font-family;
+  padding: 2rem;
+  gap: 1rem;
+  p{
+    opacity: 85%;
+  }
+  h1{
+    font-size: 2rem;
+  }
+  h2{
+    font-size: 1.25rem;
+  }
+  .credit-formul{
+    @include formulas(84%);
+  }
+  .deposit-formul{
+    @include formulas(36%);
+  }
+  .invest-formul{
+    @include formulas(63%);
+
+  }
+}
+
