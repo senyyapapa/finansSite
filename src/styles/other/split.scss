@@ -1,0 +1,20 @@
+.split {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+.size {
+    display: block;
+    height: auto;
+}
+
+@media screen and (min-width: 1200px) {
+    .split {
+        display: flex;
+        flex: 1;
+    }
+    .size {
+        display: flex;
+        height: 100vh;
+    }
+}
